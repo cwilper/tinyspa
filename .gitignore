@@ -1,0 +1,7 @@
+# Mac stuff
+.DS_Store
+
+# Build stuff
+npm-debug.log
+node_modules
+dist
