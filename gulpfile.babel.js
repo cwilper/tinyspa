@@ -29,7 +29,7 @@ gulp.task('dev-copy', () =>
   gulp.src(['src/images/**', 'src/index.html'], { base: 'src/' })
     .pipe(gulp.dest('dist/dev')));
 
-gulp.task('watch', () => {
+gulp.task('watch', ['dev'], () => {
   watch('src/js/**/*.js', () => gulp.start('dev-js'));
   watch('src/css/**/*.css', () => gulp.start('dev-css'));
   watch(['src/images/**', 'src/index.html'], () => gulp.start('dev-copy'));

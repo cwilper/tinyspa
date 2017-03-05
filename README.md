@@ -34,7 +34,7 @@ npm install
 Build and watch for development (output in `dist/dev`)
 
 ```
-gulp dev watch
+gulp watch
 ```
 
 Build for production (output in `dist/prod`)
