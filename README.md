@@ -8,10 +8,10 @@ A small seed project for single-page javascript web applications.
 * Accepts ES7 Javascript, produces broadly-compatible ES5
 * Comes with popular ESLint settings that work well in Atom
 * Manages dependencies with NPM and builds with gulp
-* Javascript module bundling with Browserify
-* Javascript transpilation and optimization with Google Closure
-* CSS preprocessing with rework, compression with UglifyCSS
-* LiveReload support during development with gulp.watch and gulp-connect
+* Bundles javascript, including source map, with webpack
+* Optimizes javascript, excluding source map, with Google Closure
+* Preprocesses CSS with rework, and compresses it with UglifyCSS
+* Supports LiveReload during development with gulp.watch and gulp-connect
 
 ## Usage
 

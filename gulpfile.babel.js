@@ -1,11 +1,11 @@
 const gulp = require('gulp');
-const browserify = require('gulp-browserify');
 const closure = require('google-closure-compiler').gulp();
 const connect = require('gulp-connect');
 const del = require('del');
 const rework = require('gulp-rework');
 const reworkNpm = require('rework-npm');
 const uglifycss = require('gulp-uglifycss');
+const webpack = require('webpack-stream');
 
 gulp.task('clean', () =>
  del(['dist', 'npm-debug.log']));
@@ -15,7 +15,10 @@ gulp.task('superclean', ['clean'], () =>
 
 gulp.task('dev-js', () =>
   gulp.src('src/js/*.js')
-    .pipe(browserify({ debug: true }))
+    .pipe(webpack({
+      output: { filename: 'main.js' },
+      devtool: 'source-map'
+    }))
     .pipe(gulp.dest('dist/dev/js')));
 
 gulp.task('dev-css', () =>
