@@ -1,6 +1,6 @@
-const $ = require('jquery');
+import $ from 'jquery';
 
-module.exports = () => {
+export default () => {
   const $app = $(document.createElement('div'));
 
   function init() {
@@ -9,7 +9,7 @@ module.exports = () => {
   }
 
   function launch() {
-    $app.html('TinySPA had been launched.');
+    $app.html('TinySPA has been launched.');
   }
 
   init();

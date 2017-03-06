@@ -16,8 +16,15 @@ gulp.task('superclean', ['clean'], () =>
 gulp.task('dev-js', () =>
   gulp.src('src/js/*.js')
     .pipe(webpack({
-      output: { filename: 'main.js' },
-      devtool: 'source-map'
+      output: {
+        filename: 'main.js' },
+      devtool: 'source-map',
+      module: {
+        loaders: [{
+          test: /\.js$/,
+          loader: 'babel-loader?presets[]=es2015',
+        }],
+      },
     }))
     .pipe(gulp.dest('dist/dev/js')));
 
@@ -58,7 +65,8 @@ gulp.task('prod-js', ['dev-js'], () =>
     .pipe(closure({
       compilation_level: 'SIMPLE',
       warning_level: 'QUIET',
-      language_in: 'ECMASCRIPT6_STRICT',
+      // language_in: 'ECMASCRIPT7',
+      language_in: 'ECMASCRIPT5_STRICT',
       language_out: 'ECMASCRIPT5_STRICT',
       js_output_file: 'main.js',
     }))
