@@ -5,6 +5,7 @@ A small seed project for single-page javascript web applications.
 **Features:**
 
 * No runtime dependencies assumed except jQuery
+* Accepts ES7 Javascript, produces broadly-compatible ES5
 * Comes with popular ESLint settings that work well in Atom
 * Manages dependencies with NPM and builds with gulp
 * Javascript module bundling with Browserify
