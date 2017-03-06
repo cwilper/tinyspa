@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const browserify = require('gulp-browserify');
 const closure = require('google-closure-compiler').gulp();
+const connect = require('gulp-connect');
 const del = require('del');
 const rework = require('gulp-rework');
 const reworkNpm = require('rework-npm');
@@ -28,13 +29,26 @@ gulp.task('dev-copy', () =>
   gulp.src(['src/images/**', 'src/index.html'], { base: 'src/' })
     .pipe(gulp.dest('dist/dev')));
 
+gulp.task('dev', ['dev-js', 'dev-css', 'dev-copy']);
+
+gulp.task('connect', () =>
+  connect.server({
+    root: 'dist/dev',
+    livereload: true,
+    port: 9100,
+  }));
+
+gulp.task('livereload', () =>
+  gulp.watch(['dist/dev/**'], () =>
+    gulp.src(['dist/dev/**']).pipe(connect.reload())));
+
 gulp.task('watch', ['dev'], () => {
   gulp.watch('src/js/**/*.js', () => gulp.start('dev-js'));
   gulp.watch('src/css/**/*.css', () => gulp.start('dev-css'));
   gulp.watch(['src/images/**', 'src/index.html'], () => gulp.start('dev-copy'));
 });
 
-gulp.task('dev', ['dev-js', 'dev-css', 'dev-copy']);
+gulp.task('livedev', ['connect', 'livereload', 'watch']);
 
 gulp.task('prod-js', ['dev-js'], () =>
   gulp.src('dist/dev/js/main.js')
@@ -58,4 +72,4 @@ gulp.task('prod-copy', ['dev-copy'], () =>
 
 gulp.task('prod', ['prod-js', 'prod-css', 'prod-copy']);
 
-gulp.task('default', ['prod']);
+gulp.task('default', ['livedev']);

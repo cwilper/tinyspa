@@ -19,6 +19,7 @@
     "google-closure-compiler": "20170218.0.0",
     "gulp": "3.9.1",
     "gulp-browserify": "0.5.1",
+    "gulp-connect": "5.0.0",
     "gulp-rework": "1.2.0",
     "gulp-uglifycss": "1.0.6",
     "rework": "1.0.1",
@@ -26,6 +27,7 @@
   },
   "scripts": {
     "dev": "gulp dev",
+    "livedev": "gulp livedev",
     "prod": "gulp prod"
   }
 }

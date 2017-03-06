@@ -10,7 +10,7 @@ A small seed project for single-page javascript web applications.
 * Javascript module bundling with Browserify
 * Javascript transpilation and optimization with Google Closure
 * CSS preprocessing with rework, compression with UglifyCSS
-* Automatic rebuilds during development with gulp-watch
+* LiveReload support during development with gulp.watch and gulp-connect
 
 ## Usage
 
@@ -31,10 +31,16 @@ Install dependencies:
 npm install
 ```
 
-Build and watch for development (output in `dist/dev`)
+Build for development and run on port 9100 with LiveReload
 
 ```
-gulp watch
+gulp
+```
+
+Build for development only (output in `dist/dev`)
+
+```
+gulp dev
 ```
 
 Build for production (output in `dist/prod`)
