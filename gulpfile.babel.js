@@ -5,7 +5,6 @@ const del = require('del');
 const rework = require('gulp-rework');
 const reworkNpm = require('rework-npm');
 const uglifycss = require('gulp-uglifycss');
-const watch = require('gulp-watch');
 
 gulp.task('clean', () =>
  del(['dist', 'npm-debug.log']));
@@ -30,9 +29,9 @@ gulp.task('dev-copy', () =>
     .pipe(gulp.dest('dist/dev')));
 
 gulp.task('watch', ['dev'], () => {
-  watch('src/js/**/*.js', () => gulp.start('dev-js'));
-  watch('src/css/**/*.css', () => gulp.start('dev-css'));
-  watch(['src/images/**', 'src/index.html'], () => gulp.start('dev-copy'));
+  gulp.watch('src/js/**/*.js', () => gulp.start('dev-js'));
+  gulp.watch('src/css/**/*.css', () => gulp.start('dev-css'));
+  gulp.watch(['src/images/**', 'src/index.html'], () => gulp.start('dev-copy'));
 });
 
 gulp.task('dev', ['dev-js', 'dev-css', 'dev-copy']);
