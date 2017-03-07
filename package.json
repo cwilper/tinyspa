@@ -1,6 +1,6 @@
 {
   "name": "tinyspa",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "author": "Chris Wilper",
   "description": "A small seed project for single-page javascript web applications",
   "repository": "github:cwilper/tinyspa",
