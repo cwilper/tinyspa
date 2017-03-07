@@ -1,11 +1,11 @@
-const gulp = require('gulp');
-const closure = require('google-closure-compiler').gulp();
-const connect = require('gulp-connect');
-const del = require('del');
-const rework = require('gulp-rework');
-const reworkNpm = require('rework-npm');
-const uglifycss = require('gulp-uglifycss');
-const webpack = require('webpack-stream');
+import gulp from 'gulp';
+import { gulp as closure } from 'google-closure-compiler';
+import connect from 'gulp-connect';
+import del from 'del';
+import rework from 'gulp-rework';
+import reworkNpm from 'rework-npm';
+import uglifycss from 'gulp-uglifycss';
+import webpack from 'webpack-stream';
 
 gulp.task('clean', () =>
  del(['dist', 'npm-debug.log']));
@@ -22,7 +22,7 @@ gulp.task('dev-js', () =>
       module: {
         loaders: [{
           test: /\.js$/,
-          loader: 'babel-loader?presets[]=es2015',
+          loader: 'babel-loader',
         }],
       },
     }))
@@ -62,7 +62,7 @@ gulp.task('livedev', ['connect', 'livereload', 'watch']);
 
 gulp.task('prod-js', ['dev-js'], () =>
   gulp.src('dist/dev/js/main.js')
-    .pipe(closure({
+    .pipe(closure()({
       compilation_level: 'SIMPLE',
       warning_level: 'QUIET',
       // language_in: 'ECMASCRIPT7',

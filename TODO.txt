@@ -1,4 +1,0 @@
-Switch to ES6 module import/exports as per
-  https://github.com/airbnb/javascript#modules
-...this might require moving away from browserify to webpack:
-  https://github.com/substack/node-browserify/issues/1186
