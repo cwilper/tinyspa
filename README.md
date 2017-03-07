@@ -4,11 +4,11 @@ A small seed project for single-page javascript web applications.
 
 **Features:**
 
-* No runtime dependencies assumed except jQuery
-* Converts ES2017 javascript to broadly-compatible ES5 with babel
+* Starts with a clean slate; no runtime dependencies are assumed
+* Converts ES2017 javascript to broadly-compatible ES5 with Babel
 * Comes with popular ESLint settings that work well in Atom
-* Manages dependencies with NPM and builds with gulp
-* Bundles javascript, including source map, with webpack
+* Manages dependencies with NPM and builds with Gulp
+* Bundles javascript, including source map, with Webpack
 * Optimizes javascript, excluding source map, with Google Closure
 * Preprocesses CSS with rework, and compresses it with UglifyCSS
 * Supports LiveReload during development with gulp.watch and gulp-connect
