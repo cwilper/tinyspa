@@ -5,9 +5,6 @@
   "description": "A small seed project for single-page javascript web applications",
   "repository": "github:cwilper/tinyspa",
   "license": "MIT",
-  "dependencies": {
-    "jquery": "3.1.1"
-  },
   "devDependencies": {
     "babel-core": "6.23.1",
     "babel-loader": "6.4.0",

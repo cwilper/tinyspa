@@ -1,15 +1,13 @@
-import $ from 'jquery';
-
 export default () => {
-  const $app = $(document.createElement('div'));
+  const appEl = document.createElement('div');
 
   function init() {
-    $app.attr('id', 'app-container');
-    document.body.appendChild($app[0]);
+    appEl.id = 'app-container';
+    document.body.appendChild(appEl);
   }
 
   function launch() {
-    $app.html('TinySPA has been launched.');
+    appEl.innerHTML = 'TinySPA has been launched.';
   }
 
   init();
